@@ -1,617 +1,779 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>M0NARQ - Our "Two-Bucket" Solution</title>
-  <meta content="M0NARQ's architecture abandons the monolithic model for an intelligent, dual-bucket system. We use the 'right model for the right job'—a strategy that surgically minimizes cost while maximizing accuracy and compliance." name="description">
-  <meta content="M0NARQ - Our 'Two-Bucket" Solution" property="og:title">
-  <meta content="M0NARQ's architecture abandons the monolithic model for an intelligent, dual-bucket system. We use the 'right model for the right job'—a strategy that surgically minimizes cost while maximizing accuracy and compliance." property="og:description">
-  <meta content="M0NARQ - Our 'Two-Bucket" Solution" property="twitter:title">
-  <meta content="M0NARQ's architecture abandons the monolithic model for an intelligent, dual-bucket system. We use the 'right model for the right job'—a strategy that surgically minimizes cost while maximizing accuracy and compliance." property="twitter:description">
-  <meta property="og:type" content="website">
-  <meta content="summary_large_image" name="twitter:card">
-  
-  <!-- Viewport Meta -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" name="viewport">
-  <meta content="Webflow" name="generator">
-  
-  <!-- LOCAL CSS -->
-  <link href="hardware-technology-consulting-template.webflow.shared.93bb2e508.css" rel="stylesheet" type="text/css">
-  
-  <!-- LOCAL FONTS -->
-  <link href="fonts.css" rel="stylesheet" type="text/css">
-  
-  <!-- Icons -->
-  <link href="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/690016b2b45a367a37815563_favicon.png" rel="shortcut icon" type="image/x-icon">
-  <link href="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/690016b743eebae2ac50aeee_webclip.png" rel="apple-touch-icon">
-  
-  <!-- Optimizations & Animation Styles -->
-  <style>
-    /* Font smoothing */
-    body {
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-    }
+    <meta charset="utf-8">
+    <title>M0NARQ - Our "Two-Bucket" Solution</title>
     
-    /* Split text styling */
-    .char {
-      display: inline-block;
-      transform-origin: bottom center;
-      will-change: transform, opacity;
-    }
+    <!-- Meta Description -->
+    <meta content="M0NARQ's architecture abandons the monolithic model for an intelligent, dual-bucket system. We use the 'right model for the right job'—a strategy that surgically minimizes cost while maximizing accuracy and compliance." name="description">
     
-    .word {
-      display: inline-block;
-      white-space: nowrap;
-    }
+    <!-- Open Graph Tags -->
+    <meta content="M0NARQ - Our 'Two-Bucket' Solution" property="og:title">
+    <meta content="M0NARQ's architecture abandons the monolithic model for an intelligent, dual-bucket system. We use the 'right model for the right job'—a strategy that surgically minimizes cost while maximizing accuracy and compliance." property="og:description">
     
-    /* Hero images start hidden */
-    .hero-bg {
-      opacity: 0;
-    }
+    <!-- Twitter Card Tags -->
+    <meta content="M0NARQ - Our 'Two-Bucket' Solution" property="twitter:title">
+    <meta content="M0NARQ's architecture abandons the monolithic model for an intelligent, dual-bucket system. We use the 'right model for the right job'—a strategy that surgically minimizes cost while maximizing accuracy and compliance." property="twitter:description">
+    <meta property="og:type" content="website">
+    <meta content="summary_large_image" name="twitter:card">
     
-    /* Performance optimizations */
-    main, .hero-section, .button, .image-fill {
-      will-change: transform, opacity;
-    }
+    <!-- Viewport Meta -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" name="viewport">
+    <meta content="Webflow" name="generator">
     
-    /* Mobile button sizing - Google standards (48px minimum) */
-    @media (max-width: 767px) {
-      .button {
-        min-height: 48px !important;
-        min-width: 48px !important;
-        padding: 14px 20px !important;
-        font-size: 16px !important; /* Prevents iOS zoom */
-      }
-      
-      .menu-button {
-        min-width: 48px !important;
-        min-height: 48px !important;
-        padding: 12px !important;
-      }
-      
-      /* Form inputs - prevent iOS zoom */
-      input, textarea, select {
-        font-size: 16px !important;
-      }
-      
-      /* Touch-friendly links */
-      a:not(.w-nav-brand) { /* Exclude logo from min-height */
-        min-height: 44px;
-        display: inline-flex;
-        align-items: center;
-      }
-    }
+    <!-- LOCAL CSS - IN ROOT -->
+    <link href="hardware-technology-consulting-template.webflow.shared.93bb2e508.css" rel="stylesheet" type="text/css">
     
-    /* Smooth transitions */
-    main, .hero-section {
-      transition: none;
-    }
+    <!-- LOCAL FONTS - IN ROOT -->
+    <link href="fonts.css" rel="stylesheet" type="text/css">
     
-    /* Prevent layout shift */
-    img, .image-fill {
-      content-visibility: auto;
-    }
+    <!-- Icons - IN ROOT -->
+    <link href="690016b2b45a367a37815563_favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="690016b743eebae2ac50aeee_webclip.png" rel="apple-touch-icon">
     
-    /* Mobile menu optimizations */
-    .navbar-menu {
-      -webkit-overflow-scrolling: touch;
-    }
-  </style>
+    <!-- === Optimizations (Phase 2) === -->
+    <!-- Preconnect to JS CDN -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Optimizations & Animation Styles -->
+    <style>
+        /* Font smoothing */
+        body {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Split text styling */
+        .char {
+            display: inline-block;
+            transform-origin: bottom center;
+            will-change: transform, opacity;
+        }
+        
+        .word {
+            display: inline-block;
+            white-space: nowrap;
+        }
+        
+        /* Hero images start hidden */
+        .hero-bg {
+            opacity: 0;
+        }
+        
+        /* Performance optimizations */
+        main, .hero-section, .button, .image-fill {
+            will-change: transform, opacity;
+        }
+        
+        /* Mobile button sizing - Google standards (48px minimum) */
+        @media (max-width: 767px) {
+            .button {
+                min-height: 48px !important;
+                min-width: 48px !important;
+                padding: 14px 20px !important;
+                font-size: 16px !important; /* Prevents iOS zoom */
+            }
+            
+            .menu-button {
+                min-width: 48px !important;
+                min-height: 48px !important;
+                padding: 12px !important;
+            }
+            
+            /* Form inputs - prevent iOS zoom */
+            input, textarea, select {
+                font-size: 16px !important;
+            }
+            
+            /* Touch-friendly links */
+            a:not(.w-nav-brand) { /* Exclude logo from min-height */
+                min-height: 44px;
+                display: inline-flex;
+                align-items: center;
+            }
+        }
+        
+        /* Smooth transitions */
+        main, .hero-section {
+            transition: none;
+        }
+        
+        /* Prevent layout shift */
+        img, .image-fill {
+            content-visibility: auto;
+        }
+        
+        /* Mobile menu optimizations */
+        .navbar-menu {
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Accessibility: Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 <body class="loading">
-  
-  <!-- === Main Page Content === -->
-  <main class="main-content">
-  
-    <!-- Global Navbar -->
-    <div data-w-id="3d7510a3-dfc6-473a-79bd-c26c6d7bf580" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
-      <div class="navbar-bg"></div>
-      <div class="main-container navbar-container">
-        <div class="navbar-row">
-          <a href="index.html" class="nav-logo-link w-inline-block">
-            <!-- LOGO: You will replace this src -->
-            <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2baa30941d8fb5f2704f_hardware-logo.svg" alt="M0NARQ Logo" class="nav-logo">
-          </a>
-          <div class="navigation-wrap">
-            <nav role="navigation" class="navbar-menu w-nav-menu">
-              <div class="nav-links">
+    <!-- === Main Page Content === -->
+    <main class="main-content">
+        <!-- Global Navbar -->
+        <div data-w-id="3d7510a3-dfc6-473a-79bd-c26c6d7bf580" 
+             data-animation="default" 
+             data-collapse="medium" 
+             data-duration="400" 
+             data-easing="ease" 
+             data-easing2="ease" 
+             role="banner" 
+             class="navbar w-nav">
+            <div class="navbar-bg"></div>
+            <div class="main-container navbar-container">
+                <div class="navbar-row">
+                    <a href="index.html" class="nav-logo-link w-inline-block">
+                        <!-- LOGO: Fixed Path - IN ROOT -->
+                        <img src="68ec2baa30941d8fb5f2704f_hardware-logo.svg" 
+                             alt="M0NARQ Logo" 
+                             class="nav-logo">
+                    </a>
+                    
+                    <div class="navigation-wrap">
+                        <nav role="navigation" class="navbar-menu w-nav-menu">
+                            <div class="nav-links">
+                                <!-- Page 1 -->
+                                <div class="nav-link-wrap">
+                                    <a href="index.html" class="dropdown-link">The Tk 32,000 Cr Problem</a>
+                                </div>
+                                <!-- Page 2 -->
+                                <div class="nav-link-wrap">
+                                    <a href="home-2.html" aria-current="page" class="dropdown-link w--current">Our "Two-Bucket" Solution</a>
+                                </div>
+                                <!-- Page 3 -->
+                                <div class="nav-link-wrap">
+                                    <a href="about-3.html" class="dropdown-link">The M0NARQ Pipeline</a>
+                                </div>
+                                <!-- Page 4 -->
+                                <div class="nav-link-wrap">
+                                    <a href="services-1.html" class="dropdown-link">Authoritative Tech Stack</a>
+                                </div>
+                                <!-- Page 5 -->
+                                <div class="nav-link-wrap">
+                                    <a href="services-2.html" class="dropdown-link">Competitive Analysis</a>
+                                </div>
+                                <!-- Page 6 -->
+                                <div class="nav-link-wrap">
+                                    <a href="services-3.html" class="dropdown-link">The Tk 5,000 Cr Market</a>
+                                </div>
+                                <!-- Page 7 -->
+                                <div class="nav-link-wrap">
+                                    <a href="customers.html" class="dropdown-link">Proof: The 5-Cheque Demo</a>
+                                </div>
+                                <!-- Page 8 -->
+                                <div class="nav-link-wrap">
+                                    <a href="pricing.html" class="dropdown-link">The Financial Case (ROI)</a>
+                                </div>
+                                <!-- Page 9 -->
+                                <div class="nav-link-wrap">
+                                    <a href="about-1.html" class="dropdown-link">The Execution Plan & The Ask</a>
+                                </div>
+                                <!-- Page 10 -->
+                                <div class="nav-link-wrap">
+                                    <a href="contact.html" class="dropdown-link">Contact & Next Steps</a>
+                                </div>
+                            </div>
+                            <div class="navbar-mobile-bg"></div>
+                        </nav>
+                    </div>
+                    
+                    <div class="navbar-right-contents">
+                        <div class="menu-button w-nav-button">
+                            <div class="menu-button-icon-wrapper">
+                                <img src="68ec3bdc9428749e735f3dbd_interface-icon-menu.svg" 
+                                     alt="show menu" 
+                                     class="menu-button-icon">
+                                <img src="68ec3bdc038a532eb6cf33c0_interface-icon-cross.svg" 
+                                     alt="dismiss" 
+                                     class="menu-button-icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 2: Hero -->
+        <section class="hero-section">
+            <!-- IMAGE: Fixed Path (Placeholder) - IN ROOT -->
+            <img class="hero-bg" 
+                 src="https://via.placeholder.com/1920x1080/1a1a1a/ffffff?text=Hero+Image+2" 
+                 alt="M0NARQ Two-Bucket Architecture" 
+                 style="opacity: 0;">
+            
+            <div class="hero-2-content" style="opacity: 0;">
+                <div class="dot-title">
+                    <div class="dot inside-title"></div>
+                    <div class="badge-text">Our "Two-Bucket" Solution</div>
+                </div>
                 
-                <!-- Page 1 -->
-                <div class="nav-link-wrap">
-                  <a href="index.html" class="dropdown-link">The Tk 32,000 Cr Problem</a>
+                <div class="hero-title">
+                    <h1 data-anim-split-text>
+                        <span class="text-span">Our "Two-Bucket" Architecture:</span> A Superior Engineering Approach.
+                    </h1>
+                    <p class="text---lead" data-anim-fade-up style="max-width: 600px;">
+                        A generic model cannot solve a specific, nuanced problem. M0NARQ's architecture abandons the monolithic model for an intelligent, dual-bucket system. We use the <strong>"right model for the right job"</strong>—a strategy that surgically minimizes cost while maximizing accuracy and compliance.
+                    </p>
+                    <a data-wf--button--variant="atop-blurred-bg" 
+                       href="about-3.html" 
+                       class="button w-variant-cf98775e-6aa8-d22e-4d45-019174967c2f w-inline-block" 
+                       data-anim-fade-up>
+                        <div class="button-icon-text-wrap">
+                            <div class="button-text">See The Full Pipeline</div>
+                        </div>
+                        <div class="button-icon-wrap">
+                            <img src="68ec2c587ddfb392769acc2e_interface-icon-arrow-up-right-white.svg" 
+                                 alt="arrow up right" 
+                                 class="button-icon">
+                            <img src="68ec2c587ddfb392769acc2e_interface-icon-arrow-up-right-white.svg" 
+                                 alt="arrow up right" 
+                                 class="button-icon">
+                        </div>
+                        <div class="button-hover-element-wrap">
+                            <div class="button-hover-element"></div>
+                        </div>
+                    </a>
                 </div>
-                <!-- Page 2 -->
-                <div class="nav-link-wrap">
-                  <a href="home-2.html" aria-current="page" class="dropdown-link w--current">Our "Two-Bucket" Solution</a>
-                </div>
-                <!-- Page 3 -->
-                <div class="nav-link-wrap">
-                  <a href="about-3.html" class="dropdown-link">The M0NARQ Pipeline</a>
-                </div>
-                <!-- Page 4 -->
-                <div class="nav-link-wrap">
-                  <a href="services-1.html" class="dropdown-link">Authoritative Tech Stack</a>
-                </div>
-                <!-- Page 5 -->
-                <div class="nav-link-wrap">
-                  <a href="services-2.html" class="dropdown-link">Competitive Analysis</a>
-                </div>
-                <!-- Page 6 -->
-                <div class="nav-link-wrap">
-                  <a href="services-3.html" class="dropdown-link">The Tk 5,000 Cr Market</a>
-                </div>
-                <!-- Page 7 -->
-                <div class="nav-link-wrap">
-                  <a href="customers.html" class="dropdown-link">Proof: The 5-Cheque Demo</a>
-                </div>
-                <!-- Page 8 -->
-                <div class="nav-link-wrap">
-                  <a href="pricing.html" class="dropdown-link">The Financial Case (ROI)</a>
-                </div>
-                <!-- Page 9 -->
-                <div class="nav-link-wrap">
-                  <a href="about-1.html" class="dropdown-link">The Execution Plan & The Ask</a>
-                </div>
-                <!-- Page 10 -->
-                <div class="nav-link-wrap">
-                  <a href="contact.html" class="dropdown-link">Contact & Next Steps</a>
-                </div>
+            </div>
+        </section>
 
-              </div>
-              <div class="navbar-mobile-bg"></div>
-            </nav>
-          </div>
-          <div class="navbar-right-contents">
-            <div class="menu-button w-nav-button">
-              <div class="menu-button-icon-wrapper">
-                <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3bdc9428749e735f3dbd_interface-icon-menu.svg" alt="show menu" class="menu-button-icon">
-                <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3bdc038a532eb6cf33c0_interface-icon-cross.svg" alt="dismiss" class="menu-button-icon">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Page 2: Hero -->
-    <section class="hero-section">
-      <!-- IMAGE: You will replace this src -->
-      <img class="hero-bg" src="https://placehold.co/1920x1080/1a1a1a/ccc?text=Hero+Image+2" alt="M0NARQ Two-Bucket Architecture" style="opacity: 0;">
-      <div class="hero-2-content" style="opacity: 0;">
-        <div class="dot-title">
-          <div class="dot inside-title"></div>
-          <div class="badge-text">Our "Two-Bucket" Solution</div>
-        </div>
-        <div class="hero-title">
-          <h1 data-anim-split-text><span class="text-span">Our "Two-Bucket" Architecture:</span> A Superior Engineering Approach.</h1>
-          <p class="text---lead" data-anim-fade-up style="max-width: 600px;">A generic model cannot solve a specific, nuanced problem. M0NARQ’s architecture abandons the monolithic model for an intelligent, dual-bucket system. We use the <strong>"right model for the right job"</strong>—a strategy that surgically minimizes cost while maximizing accuracy and compliance.</p>
-          <a data-wf--button--variant="atop-blurred-bg" href="about-3.html" class="button w-variant-cf98775e-6aa8-d22e-4d45-019174967c2f w-inline-block" data-anim-fade-up>
-            <div class="button-icon-text-wrap">
-              <div class="button-text">See The Full Pipeline</div>
-            </div>
-            <div class="button-icon-wrap">
-              <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2c587ddfb392769acc2e_interface-icon-arrow-up-right-white.svg" alt="arrow up right" class="button-icon">
-              <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2c587ddfb392769acc2e_interface-icon-arrow-up-right-white.svg" alt="arrow up right" class="button-icon">
-            </div>
-            <div class="button-hover-element-wrap">
-              <div class="button-hover-element"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- UNUSED SECTION - RETAINED -->
-    <section class="section title-top-section no-border" data-anim-fade-up>
-      <div class="main-container">
-        <div class="title-top-section">
-          <div class="heading---h2">Overview</div>
-          <div class="grid-thirds">
-            <div class="icon-feature-item">
-              <div class="icon-feature-item-top">
-                <div class="line"></div>
-                <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68edb96fe96649b33f544a89_i-fuse-symbol.svg" alt="" class="icon-feature-item-image">
-              </div>
-              <div class="icon-feature-item-content">
-                <div class="heading---h4">Data</div>
-                <div class="text-with-link">
-                  <div>Structured records that serve as a single source of truth. <span class="muted-text">Reliable data removes conflicts across teams and creates confidence in decision-making.</span></div>
-                  <a data-wf--arrow-link--variant="aligned-center" href="https://mmra.re/purchasehardware" target="_blank" class="external-link w-variant-f04e6b71-3997-a751-6f67-ae352e25f793 w-inline-block">
-                    <div class="external-link-text">Explore Data</div>
-                    <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2c58efc0669e7ced14f4_interface-arrow-right-small-white-large.svg" alt="arrow right" class="external-link-icon">
-                  </a>
+        <!-- UNUSED SECTION - RETAINED -->
+        <section class="section title-top-section no-border" data-anim-fade-up>
+            <div class="main-container">
+                <div class="title-top-section">
+                    <div class="heading---h2">Overview</div>
+                    <div class="grid-thirds">
+                        <div class="icon-feature-item">
+                            <div class="icon-feature-item-top">
+                                <div class="line"></div>
+                                <img src="68edb96fe96649b33f544a89_i-fuse-symbol.svg" alt="" class="icon-feature-item-image">
+                            </div>
+                            <div class="icon-feature-item-content">
+                                <div class="heading---h4">Data</div>
+                                <div class="text-with-link">
+                                    <div>
+                                        Structured records that serve as a single source of truth. 
+                                        <span class="muted-text">Reliable data removes conflicts across teams and creates confidence in decision-making.</span>
+                                    </div>
+                                    <a data-wf--arrow-link--variant="aligned-center" 
+                                       href="#" 
+                                       target="_blank" 
+                                       class="external-link w-variant-f04e6b71-3997-a751-6f67-ae352e25f793 w-inline-block">
+                                        <div class="external-link-text">Explore Data</div>
+                                        <img src="68ec2c58efc0669e7ced14f4_interface-arrow-right-small-white-large.svg" 
+                                             alt="arrow right" 
+                                             class="external-link-icon">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="icon-feature-item">
+                            <div class="icon-feature-item-top">
+                                <div class="line"></div>
+                                <img src="68edb96fb99c197078368a77_i-electronics.svg" alt="" class="icon-feature-item-image">
+                            </div>
+                            <div class="icon-feature-item-content">
+                                <div class="heading---h4">Process</div>
+                                <div class="text-with-link">
+                                    <div>
+                                        Hardware identifies small deviations before they escalate. 
+                                        <span class="muted-text">By detecting drift early, operations can be corrected without disruption.</span>
+                                    </div>
+                                    <a data-wf--arrow-link--variant="aligned-center" 
+                                       href="#" 
+                                       target="_blank" 
+                                       class="external-link w-variant-f04e6b71-3997-a751-6f67-ae352e25f793 w-inline-block">
+                                        <div class="external-link-text">See Process</div>
+                                        <img src="68ec2c58efc0669e7ced14f4_interface-arrow-right-small-white-large.svg" 
+                                             alt="arrow right" 
+                                             class="external-link-icon">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="icon-feature-item">
+                            <div class="icon-feature-item-top">
+                                <div class="line"></div>
+                                <img src="68edb96ff15b6ab872daf69b_i-capacitor-symbol.svg" alt="" class="icon-feature-item-image">
+                            </div>
+                            <div class="icon-feature-item-content">
+                                <div class="heading---h4">Clarity</div>
+                                <div class="text-with-link">
+                                    <div>
+                                        From prototypes to full-scale runs, 
+                                        <span class="muted-text">we validate designs at every stage. Performance is proven in real environments, not assumed.</span>
+                                    </div>
+                                    <a data-wf--arrow-link--variant="aligned-center" 
+                                       href="#" 
+                                       target="_blank" 
+                                       class="external-link w-variant-f04e6b71-3997-a751-6f67-ae352e25f793 w-inline-block">
+                                        <div class="external-link-text">See Methodology</div>
+                                        <img src="68ec2c58efc0669e7ced14f4_interface-arrow-right-small-white-large.svg" 
+                                             alt="arrow right" 
+                                             class="external-link-icon">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="icon-feature-item">
-              <div class="icon-feature-item-top">
-                <div class="line"></div>
-                <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68edb96fb99c197078368a77_i-electronics.svg" alt="" class="icon-feature-item-image">
-              </div>
-              <div class="icon-feature-item-content">
-                <div class="heading---h4">Process</div>
-                <div class="text-with-link">
-                  <div>Hardware identifies small deviations before they escalate. <span class="muted-text">By detecting drift early, operations can be corrected without disruption.</span></div>
-                  <a data-wf--arrow-link--variant="aligned-center" href="https://mmra.re/purchasehardware" target="_blank" class="external-link w-variant-f04e6b71-3997-a751-6f67-ae352e25f793 w-inline-block">
-                    <div class="external-link-text">See Process</div>
-                    <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2c58efc0669e7ced14f4_interface-arrow-right-small-white-large.svg" alt="arrow right" class="external-link-icon">
-                  </a>
+        </section>
+        <!-- END UNUSED SECTION -->
+
+        <!-- Page 2: Bucket 1 (VLMs) -->
+        <section class="section padding-bottom-large" data-anim-fade-up>
+            <div class="main-container">
+                <div class="grid-halves-section">
+                    <div id="w-node-d7f46853-fa3e-8097-8948-6a8dd5414d3f-12f6faab" class="grid-half-title">
+                        <div class="dot-title">
+                            <div class="dot inside-title"></div>
+                            <div class="badge-text">Bucket 1: The "Eyes"</div>
+                        </div>
+                        <div class="grid-half-image">
+                            <div class="hide-on-mobile">
+                                <div class="dot south-west"></div>
+                                <div class="image-wrapper portrait-wrapper" data-anim-image-reveal>
+                                    <!-- IMAGE: Fixed Path (Placeholder) - IN ROOT -->
+                                    <img src="https://via.placeholder.com/1280x1706/1a1a1a/ffffff?text=VLM+Portfolio+Diagram" 
+                                         alt="M0NARQ Vision-Language Model Stack" 
+                                         class="image-fill first" 
+                                         loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-half-content">
+                        <h2 class="heading---h4" data-anim-split-text>Bucket 1: The "Eyes" – Specialist Vision Models (VLMs)</h2>
+                        <div class="text---lead" data-anim-fade-up>
+                            This is the "Eyes." Instead of one weak, generic model, we route tasks to a stack of global, SOTA specialists. 
+                            <span class="muted-text">
+                                We use <strong>Anthropic's Claude 3.5 Sonnet</strong> for the handwritten cursive that Google deems "Experimental", 
+                                <strong>NVIDIA's Nemotron</strong> for high-fidelity tables/MICR codes, and 
+                                <strong>IBM's Docling</strong> for 30x faster multi-page PDF parsing.
+                            </span>
+                        </div>
+                        <div class="list-wrapper" style="padding-top: 24px;">
+                            <div class="bulleted-list" data-anim-fade-up>
+                                <div class="bullet-list-item">
+                                    <div class="bullet-dot"></div>
+                                    <div class="pricing-list-item-text" style="opacity: 1;">Specialist for Handwriting (92% Accuracy)</div>
+                                </div>
+                                <div class="bullet-list-item">
+                                    <div class="bullet-dot"></div>
+                                    <div class="pricing-list-item-text" style="opacity: 1;">Specialist for Tables/MICR (97% Accuracy)</div>
+                                </div>
+                                <div class="bullet-list-item">
+                                    <div class="bullet-dot"></div>
+                                    <div class="pricing-list-item-text" style="opacity: 1;">Specialist for Multi-Page Speed (30x Faster)</div>
+                                </div>
+                                <div class="bullet-list-item">
+                                    <div class="bullet-dot"></div>
+                                    <div class="pricing-list-item-text" style="opacity: 1;">Specialist for Printed Bengali (97% Accuracy)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="icon-feature-item">
-              <div class="icon-feature-item-top">
-                <div class="line"></div>
-                <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68edb96ff15b6ab872daf69b_i-capacitor-symbol.svg" alt="" class="icon-feature-item-image">
-              </div>
-              <div class="icon-feature-item-content">
-                <div class="heading---h4">Clarity</div>
-                <div class="text-with-link">
-                  <div>From prototypes to full-scale runs, <span class="muted-text">we validate designs at every stage. Performance is proven in real environments, not assumed.</span></div>
-                  <a data-wf--arrow-link--variant="aligned-center" href="https://mmra.re/purchasehardware" target="_blank" class="external-link w-variant-f04e6b71-3997-a751-6f67-ae352e25f793 w-inline-block">
-                    <div class="external-link-text">See Methodology</div>
-                    <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2c58efc0669e7ced14f4_interface-arrow-right-small-white-large.svg" alt="arrow right" class="external-link-icon">
-                  </a>
+        </section>
+
+        <!-- UNUSED SECTION - RETAINED -->
+        <section class="wide-section align-center" data-anim-fade-up>
+            <div class="parallax-image-wrapper">
+                <img src="https://via.placeholder.com/2400x1600/1a1a1a/ffffff?text=Image" 
+                     loading="lazy" 
+                     alt="" 
+                     class="image-fill parallax-image">
+            </div>
+            <div class="main-container">
+                <div class="centered-cta">
+                    <div class="cta-title">
+                        <div class="heading---h4">Prototype → Proof</div>
+                    </div>
+                    <div class="centered-cta-text">
+                        <div class="badge-text large">
+                            Quality only matters if it's measurable. Hardware sets clear benchmarks, measures outputs, and solves deviations in your chain.
+                        </div>
+                    </div>
+                    <a href="services-1.html" class="box-arrow-link w-inline-block">
+                        <div class="arrow-link-bg"></div>
+                        <div class="arrow-link-icon-wrap">
+                            <img alt="arrow right" 
+                                 src="68ec2c587ddfb392769acc2b_interface-arrow-right-small-dark.svg" 
+                                 class="arrow-link-icon">
+                        </div>
+                        <div class="arrow-link-text">Our Capabilities</div>
+                    </a>
+                    <div class="dot north-west"></div>
+                    <div class="dot south-east"></div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END UNUSED SECTION -->
+        </section>
+        <!-- END UNUSED SECTION -->
 
-    <!-- Page 2: Bucket 1 (VLMs) -->
-    <section class="section padding-bottom-large" data-anim-fade-up>
-      <div class="main-container">
-        <div class="grid-halves-section">
-          <div id="w-node-d7f46853-fa3e-8097-8948-6a8dd5414d3f-12f6faab" class="grid-half-title">
-            <div class="dot-title">
-              <div class="dot inside-title"></div>
-              <div class="badge-text">Bucket 1: The "Eyes"</div>
-            </div>
-            <div class="grid-half-image">
-              <div class="hide-on-mobile">
-                <div class="dot south-west"></div>
-                <div class="image-wrapper portrait-wrapper" data-anim-image-reveal>
-                  <!-- IMAGE: You will replace this src -->
-                  <img src="https://placehold.co/1280x1706/1a1a1a/ccc?text=VLM+Portfolio+Diagram" alt="M0NARQ Vision-Language Model Stack" class="image-fill first">
+        <!-- Page 2: Bucket 2 (LLMs) -->
+        <section class="section" data-anim-fade-up>
+            <div class="main-container">
+                <div class="grid-section">
+                    <div class="grid-section-contents">
+                        <div class="dot-title">
+                            <div class="dot inside-title"></div>
+                            <div class="badge-text">Bucket 2: The "Brain"</div>
+                        </div>
+                        <h2 class="heading---h4" data-anim-split-text>Bucket 2: The "Brain" – Native Bengali LLMs</h2>
+                        <div class="text---lead" data-anim-fade-up>
+                            This is our most significant differentiator. After the "Eyes" read the text, our "Brain" *understands* it. This is the Bengali reasoning layer that AWS and Google lack. It validates, cross-references, and detects fraud.
+                        </div>
+                        <div class="process-list-small" data-anim-fade-up>
+                            <div class="process-list-small-item">
+                                <div class="line" data-anim-line></div>
+                                <div class="process-text-justified" style="margin-top: 12px;">
+                                    <div class="process-number-small">
+                                        <div class="badge-text muted-text">01</div>
+                                    </div>
+                                    <div class="process-text">
+                                        <strong>Amount Parsing:</strong> Parses "পঞ্চাশ হাজার টাকা" → 50,000 using <strong>TituLLM-3B</strong>.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="process-list-small-item">
+                                <div class="line" data-anim-line></div>
+                                <div class="process-text-justified" style="margin-top: 12px;">
+                                    <div class="process-number-small">
+                                        <div class="badge-text muted-text">02</div>
+                                    </div>
+                                    <div class="process-text">
+                                        <strong>Name Validation:</strong> Matches "মোঃ করিম" → "Md. Karim" using <strong>BanglaBERT</strong>.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="process-list-small-item">
+                                <div class="line" data-anim-line></div>
+                                <div class="process-text-justified" style="margin-top: 12px;">
+                                    <div class="process-number-small">
+                                        <div class="badge-text muted-text">03</div>
+                                    </div>
+                                    <div class="process-text">
+                                        <strong>Fraud Reasoning:</strong> Detects anomalies across documents using <strong>Qwen3-235B</strong>.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="process-list-small-item">
+                                <div class="line" data-anim-line></div>
+                                <div class="process-text-justified" style="margin-top: 12px;">
+                                    <div class="process-number-small">
+                                        <div class="badge-text muted-text">04</div>
+                                    </div>
+                                    <div class="process-text">
+                                        <strong>Translation:</strong> Handles Bengali-English translation using <strong>Meta's Llama 3.1-8B</strong>.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="w-node-ad84d0bc-7560-e03e-669c-a2461e38b1c4-12f6faab" 
+                         class="image-pair" 
+                         data-anim-image-reveal>
+                        <div class="image-pair-small align-right">
+                            <div class="image-wrapper portrait-wrapper">
+                                <!-- IMAGE: Fixed Path (Placeholder) - IN ROOT -->
+                                <img src="https://via.placeholder.com/1280x1706/1a1a1a/ffffff?text=Bengali+LLM+Stack" 
+                                     alt="M0NARQ Bengali LLM Stack" 
+                                     class="image-fill second" 
+                                     loading="lazy">
+                            </div>
+                        </div>
+                        <div class="image-pair-large">
+                            <div class="dot north-east"></div>
+                            <div class="image-wrapper portrait-wrapper">
+                                <!-- IMAGE: Fixed Path (Placeholder) - IN ROOT -->
+                                <img src="https://via.placeholder.com/1280x1706/1a1a1a/ffffff?text=Bengali+LLM+Stack+2" 
+                                     alt="M0NARQ Bengali LLM Stack" 
+                                     class="image-fill first" 
+                                     loading="lazy">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="grid-half-content">
-            <h2 class="heading---h4" data-anim-split-text>Bucket 1: The "Eyes" – Specialist Vision Models (VLMs)</h2>
-            <div class="text---lead" data-anim-fade-up>This is the "Eyes." Instead of one weak, generic model, we route tasks to a stack of global, SOTA specialists. <span class="muted-text">We use <strong>Anthropic's Claude 3.5 Sonnet</strong> for the handwritten cursive that Google deems "Experimental", <strong>NVIDIA's Nemotron</strong> for high-fidelity tables/MICR codes, and <strong>IBM's Docling</strong> for 30x faster multi-page PDF parsing.</span></div>
-            <div class="list-wrapper" style="padding-top: 24px;">
-              <div class="bulleted-list" data-anim-fade-up>
-                <div class="bullet-list-item"><div class="bullet-dot"></div><div class="pricing-list-item-text" style="opacity: 1;">Specialist for Handwriting (92% Accuracy)</div></div>
-                <div class="bullet-list-item"><div class="bullet-dot"></div><div class="pricing-list-item-text" style="opacity: 1;">Specialist for Tables/MICR (97% Accuracy)</div></div>
-                <div class="bullet-list-item"><div class="bullet-dot"></div><div class="pricing-list-item-text" style="opacity: 1;">Specialist for Multi-Page Speed (30x Faster)</div></div>
-                <div class="bullet-list-item"><div class="bullet-dot"></div><div class="pricing-list-item-text" style="opacity: 1;">Specialist for Printed Bengali (97% Accuracy)</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- UNUSED SECTION - RETAINED -->
-    <section class="wide-section align-center" data-anim-fade-up>
-      <div class="parallax-image-wrapper">
-        <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc3b33b90ac2ee06cd1_photo-hero-07.webp" loading="lazy" sizes="(max-width: 2400px) 100vw, 2400px" srcset="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc3b33b90ac2ee06cd1_photo-hero-07-p-500.webp 500w, https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc3b33b90ac2ee06cd1_photo-hero-07-p-800.webp 800w, https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc3b33b90ac2ee06cd1_photo-hero-07-p-1080.webp 1080w, https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc3b33b90ac2ee06cd1_photo-hero-07-p-1600.webp 1600w, https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc3b33b90ac2ee06cd1_photo-hero-07-p-2000.webp 2000w, https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc3b33b90ac2ee06cd1_photo-hero-07.webp 2400w" alt="" class="image-fill parallax-image">
-      </div>
-      <div class="main-container">
-        <div class="centered-cta">
-          <div class="cta-title">
-            <div class="heading---h4">Prototype → Proof</div>
-          </div>
-          <div class="centered-cta-text">
-            <div class="badge-text large">Quality only matters if it’s measurable. Hardware sets clear benchmarks, measures outputs, and solves deviations in your chain.</div>
-          </div>
-          <a href="services-1.html" class="box-arrow-link w-inline-block">
-            <div class="arrow-link-bg"></div>
-            <div class="arrow-link-icon-wrap">
-              <img alt="arrow right" src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2c587ddfb392769acc2b_interface-arrow-right-small-dark.svg" class="arrow-link-icon">
-            </div>
-            <div class="arrow-link-text">Our Capabilities</div>
-          </a>
-          <div class="dot north-west"></div>
-          <div class="dot south-east"></div>
-        </div>
-      </div>
-    </section>
-    <!-- END UNUSED SECTION -->
-
-    <!-- Page 2: Bucket 2 (LLMs) -->
-    <section class="section" data-anim-fade-up>
-      <div class="main-container">
-        <div class="grid-section">
-          <div class="grid-section-contents">
-            <div class="dot-title">
-              <div class="dot inside-title"></div>
-              <div class="badge-text">Bucket 2: The "Brain"</div>
-            </div>
-            <h2 class="heading---h4" data-anim-split-text>Bucket 2: The "Brain" – Native Bengali LLMs</h2>
-            <div class="text---lead" data-anim-fade-up>This is our most significant differentiator. After the "Eyes" read the text, our "Brain" *understands* it. This is the Bengali reasoning layer that AWS and Google lack. It validates, cross-references, and detects fraud.</div>
-            <div class="process-list-small" data-anim-fade-up>
-              <div class="process-list-small-item">
-                <div class="line" data-anim-line></div>
-                <div class="process-text-justified" style="margin-top: 12px;">
-                  <div class="process-number-small"><div class="badge-text muted-text">01</div></div>
-                  <div class="process-text"><strong>Amount Parsing:</strong> Parses "পঞ্চাশ হাজার টাকা" → 50,000 using <strong>TituLLM-3B</strong>.</div>
+        <!-- UNUSED SECTION - RETAINED -->
+        <section class="section padding-bottom-large" data-anim-fade-up>
+            <div class="main-container">
+                <div class="grid-section">
+                    <div class="grid-section-contents">
+                        <div class="coil-wrapper">
+                            <div class="coil-logo">
+                                <div class="line left"></div>
+                                <div class="line bottom"></div>
+                                <div class="dot south-east"></div>
+                                <img src="68ec2baa270c128f8f73f370_client-inertial.svg" alt="">
+                            </div>
+                            <div class="coil-text">
+                                <div class="text---lead">
+                                    "In our facility, accuracy means uptime. Hardware gave us a way to see small deviations before they caused stoppages. It's simple: fewer surprises, more consistent production."
+                                </div>
+                                <div class="line right"></div>
+                                <div class="line bottom"></div>
+                            </div>
+                            <div class="coil-bottom">
+                                <div class="line left"></div>
+                                <div class="badge-text">–lucas boyd, ceo</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="w-node-a3af1642-2234-bfaa-5f8d-d1fb4ba1a13f-12f6faab" 
+                         data-w-id="a3af1642-2234-bfaa-5f8d-d1fb4ba1a13f" 
+                         class="image-pair">
+                        <div class="image-pair-small align-right">
+                            <div class="image-wrapper square-wrapper">
+                                <img src="https://via.placeholder.com/1280x1280/1a1a1a/ffffff?text=Image" 
+                                     loading="lazy" 
+                                     alt="" 
+                                     class="image-fill second">
+                            </div>
+                        </div>
+                        <div class="image-pair-large">
+                            <div class="dot south-east"></div>
+                            <div class="image-wrapper square-wrapper">
+                                <img src="https://via.placeholder.com/1920x1920/1a1a1a/ffffff?text=Image" 
+                                     loading="lazy" 
+                                     alt="" 
+                                     class="image-fill first">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="process-list-small-item">
-                <div class="line" data-anim-line></div>
-                <div class="process-text-justified" style="margin-top: 12px;">
-                  <div class="process-number-small"><div class="badge-text muted-text">02</div></div>
-                  <div class="process-text"><strong>Name Validation:</strong> Matches "মোঃ করিম" → "Md. Karim" using <strong>BanglaBERT</strong>.</div>
+            </div>
+        </section>
+        <!-- END UNUSED SECTION -->
+
+        <!-- UNUSED SECTION - RETAINED -->
+        <section class="section title-top-section padding-bottom-0" data-anim-fade-up>
+            <div class="main-container">
+                <div class="title-top-section">
+                    <div class="heading---h2">Clients</div>
+                    <div class="client-grid">
+                        <div class="client-grid-item">
+                            <img src="68ec2baab3c5519681b68e3b_client-morance.svg" 
+                                 loading="lazy" 
+                                 alt="" 
+                                 class="client-grid-image">
+                            <div class="line top"></div>
+                            <div class="line right hide"></div>
+                            <div class="line bottom hide-on-mobile"></div>
+                            <div class="line left"></div>
+                            <div class="dot north-east hide-on-mobile"></div>
+                            <div class="dot south-east hide"></div>
+                            <div class="dot south-west hide-on-mobile"></div>
+                            <div class="dot north-west"></div>
+                        </div>
+                        <div class="client-grid-item">
+                            <img src="68ec2baa8d845dc9602c7089_client-gridpoint.svg" 
+                                 loading="lazy" 
+                                 alt="" 
+                                 class="client-grid-image">
+                            <div class="line top"></div>
+                            <div class="line right hide-on-desktop"></div>
+                            <div class="line bottom hide-on-mobile"></div>
+                            <div class="line left"></div>
+                            <div class="dot north-east show-on-mobile"></div>
+                            <div class="dot south-east hide"></div>
+                            <div class="dot south-west hide"></div>
+                            <div class="dot north-west hide"></div>
+                        </div>
+                        <div class="client-grid-item">
+                            <img src="68ec2baa0bfb345880991cfe_client-continuum.svg" 
+                                 loading="lazy" 
+                                 alt="" 
+                                 class="client-grid-image">
+                            <div class="line top"></div>
+                            <div class="line right hide"></div>
+                            <div class="line bottom"></div>
+                            <div class="line left"></div>
+                            <div class="dot north-east hide"></div>
+                            <div class="dot south-east hide"></div>
+                            <div class="dot south-west show-on-mobile"></div>
+                            <div class="dot north-west hide"></div>
+                        </div>
+                        <div class="client-grid-item">
+                            <img src="68ec2baa3b47ef24771ab513_client-bailey-klein.svg" 
+                                 loading="lazy" 
+                                 alt="" 
+                                 class="client-grid-image">
+                            <div class="line top"></div>
+                            <div class="line right"></div>
+                            <div class="line bottom"></div>
+                            <div class="line left"></div>
+                            <div class="dot north-east hide-on-mobile"></div>
+                            <div class="dot south-east"></div>
+                            <div class="dot south-west hide"></div>
+                            <div class="dot north-west hide"></div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="process-list-small-item">
-                <div class="line" data-anim-line></div>
-                <div class="process-text-justified" style="margin-top: 12px;">
-                  <div class="process-number-small"><div class="badge-text muted-text">03</div></div>
-                  <div class="process-text"><strong>Fraud Reasoning:</strong> Detects anomalies across documents using <strong>Qwen3-235B</strong>.</div>
+            </div>
+        </section>
+        <!-- END UNUSED SECTION -->
+
+        <!-- UNUSED SECTION - RETAINED -->
+        <section class="section padding-assymetrical" data-anim-fade-up>
+            <div class="main-container">
+                <div class="right-quote">
+                    <div class="heading---h4">
+                        "Hardware reduces variability by tracking every input and output in real time. 
+                        <span class="muted-text">That traceability gives teams the ability to identify drift the moment it occurs."</span>
+                    </div>
+                    <div class="quote-footer">
+                        <div class="line"></div>
+                        <div class="quote-footer-content">
+                            <div class="badge-text">–lucas boyd, ceo</div>
+                            <img src="68ec2baa24d64381d40330fb_client-prospect.svg" alt="" class="muted-logo">
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="process-list-small-item">
-                <div class="line" data-anim-line></div>
-                <div class="process-text-justified" style="margin-top: 12px;">
-                  <div class="process-number-small"><div class="badge-text muted-text">04</div></div>
-                  <div class="process-text"><strong>Translation:</strong> Handles Bengali-English translation using <strong>Meta's Llama 3.1-8B</strong>.</div>
+            </div>
+        </section>
+        <!-- END UNUSED SECTION -->
+
+        <!-- Page 2: Final CTA -->
+        <section class="wide-section align-bottom" data-anim-fade-up>
+            <div class="parallax-image-wrapper muted">
+                <!-- IMAGE: Fixed Path (Placeholder) - IN ROOT -->
+                <img src="https://via.placeholder.com/2400x1600/1a1a1a/ffffff?text=Final+CTA+Image" 
+                     loading="lazy" 
+                     alt="" 
+                     class="image-fill parallax-image">
+            </div>
+            <div class="main-container">
+                <div class="cta">
+                    <div class="heading---h2 cta-heading" data-anim-split-text>The Result: A System That Thinks, at 3.3x Lower Cost.</div>
+                    <div class="text---lead" data-anim-fade-up>
+                        This dual-bucket system is not just clever design; it is a direct exploit of our competitors' documented gaps. It solves the handwriting problem, adds the missing reasoning layer, and-leverages open-source models to break the <strong>3.3x cost disparity</strong>.
+                    </div>
+                    <div class="buttons">
+                        <a data-wf--button--variant="brand-color" 
+                           href="about-3.html" 
+                           class="button w-variant-ae197d1d-988a-11ef-37c4-d104a40294d7 w-inline-block" 
+                           data-anim-fade-up>
+                            <div class="button-icon-text-wrap">
+                                <div class="button-text">See The Full Pipeline</div>
+                            </div>
+                            <div class="button-icon-wrap">
+                                <img src="68ec2c587ddfb392769acc2e_interface-icon-arrow-up-right-white.svg" 
+                                     alt="arrow up right" 
+                                     class="button-icon">
+                                <img src="68ec2c587ddfb392769acc2e_interface-icon-arrow-up-right-white.svg" 
+                                     alt="arrow up right" 
+                                     class="button-icon">
+                            </div>
+                            <div class="button-hover-element-wrap">
+                                <div class="button-hover-element"></div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div id="w-node-ad84d0bc-7560-e03e-669c-a2461e38b1c4-12f6faab" class="image-pair" data-anim-image-reveal>
-            <div class="image-pair-small align-right">
-              <div class="image-wrapper portrait-wrapper">
-                <!-- IMAGE: You will replace this src -->
-                <img src="https://placehold.co/1280x1706/1a1a1a/ccc?text=Bengali+LLM+Stack" alt="M0NARQ Bengali LLM Stack" class="image-fill second">
-              </div>
-            </div>
-            <div class="image-pair-large">
-              <div class="dot north-east"></div>
-              <div class="image-wrapper portrait-wrapper">
-                <!-- IMAGE: You will replace this src -->
-                <img src="https://placehold.co/1280x1706/1a1a1a/ccc?text=Bengali+LLM+Stack+2" alt="M0NARQ Bengali LLM Stack" class="image-fill first">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- UNUSED SECTION - RETAINED -->
-    <section class="section padding-bottom-large" data-anim-fade-up>
-      <div class="main-container">
-        <div class="grid-section">
-          <div class="grid-section-contents">
-            <div class="coil-wrapper">
-              <div class="coil-logo">
-                <div class="line left"></div>
-                <div class="line bottom"></div>
-                <div class="dot south-east"></div>
-                <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2baa270c128f8f73f370_client-inertial.svg" alt="">
-              </div>
-              <div class="coil-text">
-                <div class="text---lead">“In our facility, accuracy means uptime. Hardware gave us a way to see small deviations before they caused stoppages. It’s simple: fewer surprises, more consistent production.”</div>
-                <div class="line right"></div>
-                <div class="line bottom"></div>
-              </div>
-              <div class="coil-bottom">
-                <div class="line left"></div>
-                <div class="badge-text">–lucas boyd, ceo</div>
-              </div>
-            </div>
-          </div>
-          <div id="w-node-a3af1642-2234-bfaa-5f8d-d1fb4ba1a13f-12f6faab" data-w-id="a3af1642-2234-bfaa-5f8d-d1fb4ba1a13f" class="image-pair">
-            <div class="image-pair-small align-right">
-              <div class="image-wrapper square-wrapper">
-                <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc330941d8fb5f48f73_photo-portrait-16.webp" srcset="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc330941d8fb5f48f73_photo-portrait-16-p-500.webp 500w, https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc330941d8fb5f48f73_photo-portrait-16-p-800.webp 800w, https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc330941d8fb5f48f73_photo-portrait-16-p-1080.webp 1080w, https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc330941d8fb5f48f73_photo-portrait-16.webp 1280w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 29vw, (max-width: 1439px) 18vw, 257.59375px" alt="" class="image-fill second">
-              </div>
-            </div>
-            <div class="image-pair-large">
-              <div class="dot south-east"></div>
-              <div class="image-wrapper square-wrapper">
-                <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc3e9a16bc1601d37ab_photo-landscape-07.webp" srcset="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc3e9a16bc1601d37ab_photo-landscape-07-p-500.webp 500w, https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc3e9a16bc1601d37ab_photo-landscape-07-p-800.webp 800w, https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc3e9a16bc1601d37ab_photo-landscape-07-p-1080.webp 1080w, https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc3e9a16bc1601d37ab_photo-landscape-07-p-1600.webp 1600w, https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec3fc3e9a16bc1601d37ab_photo-landscape-07.webp 1920w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 68vw, (max-width: 1439px) 43vw, 601.0625px" alt="" class="image-fill first">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END UNUSED SECTION -->
-
-    <!-- UNUSED SECTION - RETAINED -->
-    <section class="section title-top-section padding-bottom-0" data-anim-fade-up>
-      <div class="main-container">
-        <div class="title-top-section">
-          <div class="heading---h2">Clients</div>
-          <div class="client-grid">
-            <div class="client-grid-item">
-              <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2baab3c5519681b68e3b_client-morance.svg" loading="lazy" alt="" class="client-grid-image">
-              <div class="line top"></div>
-              <div class="line right hide"></div>
-              <div class="line bottom hide-on-mobile"></div>
-              <div class="line left"></div>
-              <div class="dot north-east hide-on-mobile"></div>
-              <div class="dot south-east hide"></div>
-              <div class="dot south-west hide-on-mobile"></div>
-              <div class="dot north-west"></div>
-            </div>
-            <div class="client-grid-item">
-              <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2baa8d845dc9602c7089_client-gridpoint.svg" loading="lazy" alt="" class="client-grid-image">
-              <div class="line top"></div>
-              <div class="line right hide-on-desktop"></div>
-              <div class="line bottom hide-on-mobile"></div>
-              <div class="line left"></div>
-              <div class="dot north-east show-on-mobile"></div>
-              <div class="dot south-east hide"></div>
-              <div class="dot south-west hide"></div>
-              <div class="dot north-west hide"></div>
-            </div>
-            <div class="client-grid-item">
-              <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2baa0bfb345880991cfe_client-continuum.svg" loading="lazy" alt="" class="client-grid-image">
-              <div class="line top"></div>
-              <div class="line right hide"></div>
-              <div class="line bottom"></div>
-              <div class="line left"></div>
-              <div class="dot north-east hide"></div>
-              <div class="dot south-east hide"></div>
-              <div class="dot south-west show-on-mobile"></div>
-              <div class="dot north-west hide"></div>
-            </div>
-            <div class="client-grid-item">
-              <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2baa3b47ef24771ab513_client-bailey-klein.svg" loading="lazy" alt="" class="client-grid-image">
-              <div class="line top"></div>
-              <div class="line right"></div>
-              <div class="line bottom"></div>
-              <div class="line left"></div>
-              <div class="dot north-east hide-on-mobile"></div>
-              <div class="dot south-east"></div>
-              <div class="dot south-west hide"></div>
-              <div class="dot north-west hide"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END UNUSED SECTION -->
-
-    <!-- UNUSED SECTION - RETAINED -->
-    <section class="section padding-assymetrical" data-anim-fade-up>
-      <div class="main-container">
-        <div class="right-quote">
-          <div class="heading---h4">“Hardware reduces variability by tracking every input and output in real time. <span class="muted-text">That traceability gives teams the ability to identify drift the moment it occurs.”</span></div>
-          <div class="quote-footer">
-            <div class="line"></div>
-            <div class="quote-footer-content">
-              <div class="badge-text">–lucas boyd, ceo</div>
-              <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2baa24d64381d40330fb_client-prospect.svg" alt="" class="muted-logo">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END UNUSED SECTION -->
-
-    <!-- Page 2: Final CTA -->
-    <section class="wide-section align-bottom" data-anim-fade-up>
-      <div class="parallax-image-wrapper muted">
-        <!-- IMAGE: You will replace this src -->
-        <img src="https://placehold.co/2400x1600/1a1a1a/ccc?text=Final+CTA+Image" loading="lazy" sizes="(max-width: 2400px) 100vw, 2400px" alt="" class="image-fill parallax-image">
-      </div>
-      <div class="main-container">
-        <div class="cta">
-          <div class="heading---h2 cta-heading" data-anim-split-text>The Result: A System That Thinks, at 3.3x Lower Cost.</div>
-          <div class="text---lead" data-anim-fade-up>This dual-bucket system is not just clever design; it is a direct exploit of our competitors' documented gaps. It solves the handwriting problem, adds the missing reasoning layer, and-leverages open-source models to break the <strong>3.3x cost disparity</strong>.</div>
-          <div class="buttons">
-            <a data-wf--button--variant="brand-color" href="about-3.html" class="button w-variant-ae197d1d-988a-11ef-37c4-d104a40294d7 w-inline-block" data-anim-fade-up>
-              <div class="button-icon-text-wrap">
-                <div class="button-text">See The Full Pipeline</div>
-              </div>
-              <div class="button-icon-wrap">
-                <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2c587ddfb392769acc2e_interface-icon-arrow-up-right-white.svg" alt="arrow up right" class="button-icon">
-                <img src="https" alt="arrow up right" class="button-icon">
-              </div>
-              <div class="button-hover-element-wrap">
-                <div class="button-hover-element"></div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Global Footer -->
-    <section class="footer">
-      <div class="main-container">
-        <div class="footer-top">
-          <div id="w-node-ee88fee9-3337-a56d-0235-fbfe71c291e4-71c291e1" class="footer-logo-wrap">
-            <a href="index.html" class="w-inline-block">
-              <!-- LOGO: You will replace this src -->
-              <img src="https://cdn.prod.website-files.com/68e870847ab6585e89e03ded/68ec2baa30941d8fb5f2704f_hardware-logo.svg" alt="M0NARQ Logo" class="footer-logo">
-            </a>
-          </div>
-          <!-- Footer Column 1: Navigation -->
-          <div class="footer-column">
-            <div class="footer-column-title">M0NARQ</div>
-            <a href="index.html" class="footer-column-link">The Tk 32,000 Cr Problem</a>
-            <a href="home-2.html" aria-current="page" class="footer-column-link w--current">Our "Two-Bucket" Solution</a>
-            <a href="about-3.html" class="footer-column-link">The M0NARQ Pipeline</a>
-            <a href="services-1.html" class="footer-column-link">Authoritative Tech Stack</a>
-            <a href="services-2.html" class="footer-column-link">Competitive Analysis</a>
-          </div>
-          <!-- Footer Column 2: Navigation -->
-          <div class="footer-column">
-            <div class="footer-column-title">Investment</div>
-            <a href="services-3.html" class="footer-column-link">The Tk 5,000 Cr Market</a>
-            <a href="customers.html" class="footer-column-link">Proof: The 5-Cheque Demo</a>
-            <a href="pricing.html" class="footer-column-link">The Financial Case (ROI)</a>
-            <a href="about-1.html" class="footer-column-link">The Execution Plan & The Ask</a>
-            <a href="contact.html" class="footer-column-link">Contact & Next Steps</a>
-          </div>
-          <!-- Footer Column 3: Contact -->
-          <div class="footer-column">
-            <div class="footer-column-title">Contact</div>
-            <a href="mailto:info@samiulkarim.online" class="external-link w-inline-block">
-              <div class="external-link-text">info@samiulkarim.online</div>
-            </a>
-            <a href="mailto:partnerships@samiulkarim.online" class="external-link w-inline-block">
-              <div class="external-link-text">partnerships@samiulkarim.online</div>
-            </a>
-            <a href="mailto:sk@samiulkarim.online" class="external-link w-inline-block">
-              <div class="external-link-text">sk@samiulkarim.online</div>
-            </a>
-            <a href="tel:+8801798344063" class="external-link w-inline-block">
-              <div class="external-link-text">+880-1798344063</div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="line"><div class="gradient-line-horizontal" data-anim-line></div></div>
-        <div class="main-container">
-          <div class="footer-details">
-            <!-- Social Media Removed -->
-            <div class="footer-copyright-wrap" style="width: 100%;">
-              <div class="copyright-items">
-                <div class="copyright-item">
-                  <div class="text---small">
-                    <span class="muted-text">© M0NARQ LLC. Registered in Delaware, USA.</span>
-                  </div>
+        <!-- Global Footer -->
+        <section class="footer">
+            <div class="main-container">
+                <div class="footer-top">
+                    <div id="w-node-ee88fee9-3337-a56d-0235-fbfe71c291e4-71c291e1" class="footer-logo-wrap">
+                        <a href="index.html" class="w-inline-block">
+                            <!-- LOGO: Fixed Path - IN ROOT -->
+                            <img src="68ec2baa30941d8fb5f2704f_hardware-logo.svg" 
+                                 alt="M0NARQ Logo" 
+                                 class="footer-logo">
+                        </a>
+                    </div>
+                    
+                    <!-- Footer Column 1: Navigation -->
+                    <div class="footer-column">
+                        <div class="footer-column-title">M0NARQ</div>
+                        <a href="index.html" class="footer-column-link">The Tk 32,000 Cr Problem</a>
+                        <a href="home-2.html" aria-current="page" class="footer-column-link w--current">Our "Two-Bucket" Solution</a>
+                        <a href="about-3.html" class="footer-column-link">The M0NARQ Pipeline</a>
+                        <a href="services-1.html" class="footer-column-link">Authoritative Tech Stack</a>
+                        <a href="services-2.html" class="footer-column-link">Competitive Analysis</a>
+                    </div>
+                    
+                    <!-- Footer Column 2: Navigation -->
+                    <div class="footer-column">
+                        <div class="footer-column-title">Investment</div>
+                        <a href="services-3.html" class="footer-column-link">The Tk 5,000 Cr Market</a>
+                        <a href="customers.html" class="footer-column-link">Proof: The 5-Cheque Demo</a>
+                        <a href="pricing.html" class="footer-column-link">The Financial Case (ROI)</a>
+                        <a href="about-1.html" class="footer-column-link">The Execution Plan & The Ask</a>
+                        <a href="contact.html" class="footer-column-link">Contact & Next Steps</a>
+                    </div>
+                    
+                    <!-- Footer Column 3: Contact -->
+                    <div class="footer-column">
+                        <div class="footer-column-title">Contact</div>
+                        <a href="mailto:info@samiulkarim.online" class="external-link w-inline-block">
+                            <div class="external-link-text">info@samiulkarim.online</div>
+                        </a>
+                        <a href="mailto:partnerships@samiulkarim.online" class="external-link w-inline-block">
+                            <div class="external-link-text">partnerships@samiulkarim.online</div>
+                        </a>
+                        <a href="mailto:sk@samiulkarim.online" class="external-link w-inline-block">
+                            <div class="external-link-text">sk@samiulkarim.online</div>
+                        </a>
+                        <a href="tel:+8801798344063" class="external-link w-inline-block">
+                            <div class="external-link-text">+880-1798344063</div>
+                        </a>
+                    </div>
                 </div>
-              </div>
-              <div class="text---small muted-text">This document is confidential and intended solely for the recipient. All data is based on M0NARQ internal research and cited public sources. Projections are estimates and not guarantees of future performance.</div>
-              <div class="dot footer-details-dot"></div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+            
+            <div class="footer-bottom">
+                <div class="line">
+                    <div class="gradient-line-horizontal" data-anim-line></div>
+                </div>
+                <div class="main-container">
+                    <div class="footer-details">
+                        <!-- Social Media Removed -->
+                        <div class="footer-copyright-wrap" style="width: 100%;">
+                            <div class="copyright-items">
+                                <div class="copyright-item">
+                                    <div class="text---small">
+                                        <span class="muted-text">© M0NARQ LLC. Registered in Delaware, USA.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text---small muted-text">
+                                This document is confidential and intended solely for the recipient. All data is based on M0NARQ internal research and cited public sources. Projections are estimates and not guarantees of future performance.
+                            </div>
+                            <div class="dot footer-details-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- End Main Page Content -->
 
-  </main>
-  <!-- End Main Page Content -->
-
-  <!-- Search Modal (kept for mobile menu) -->
-  <div class="search-modal-wrap">
-    <div class="search-modal-screen"></div>
-    <div class="search-modal-content">
-      <form action="/search" class="search-modal-form w-form">
-        <input class="form-input w-input" maxlength="256" name="query" placeholder="Search…" type="search" id="search" required="">
-        <input type="submit" class="button search-modal-button w-button" value="Search">
-      </form>
-    </div>
-  </div>
-  
-  <!-- Master JS -->
-  <script type="module" src="master.js"></script>
-
+    <!-- Master JS -->
+    <script type="module" src="master.js"></script>
 </body>
 </html>
-
-
