@@ -2,7 +2,17 @@
  * Hardware Template - Production Master Animation System
  * Optimized for mobile-first, buttery smooth scrolling
  * All pages analyzed from hardware-technology-consulting-template.webflow.io
+ * * --- Phase 2 Update ---
+ * Added error boundary for CDN import failures.
+ * ---
  */
+
+window.addEventListener('error', (e) => {
+  if (e.message.includes('Failed to fetch') || e.message.includes('CDN')) {
+    console.warn('Animation library failed to load. Site will work but animations disabled.');
+    document.body.classList.remove('loading');
+  }
+});
 
 import gsap from 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js';
 import ScrollTrigger from 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js';
